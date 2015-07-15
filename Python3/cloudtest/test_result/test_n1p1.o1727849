@@ -1,0 +1,9 @@
+Will count the word :" ash "
+start_time:  2015-04-12 12:32:24.893527
+IO_end_time:  2015-04-12 12:33:05.756288
+The word " ash " appeared  117 time(s) in the file
+top 10 users:  [('luke5sos', 96), ('mtv', 67), ('johnfeldy', 59), ('ashton5sos', 54), ('calum5sos', 49), ('itunesfestival', 43), ('altpress', 42), ('5sos', 41), ('charliesimo', 40), ('jackalltimelow', 40)]
+top 10 topics:  [('vote5sos', 221), ('amnesiamusicvideo', 133), ('auspol', 85), ('mtvhottest', 51), ('5sosrockoutwithyoursocksouttour', 48), ('icac', 35), ('socialmedia', 29), ('photography', 25), ('gaza', 25), ('5sosvmas', 24)]
+end_time:  2015-04-12 12:33:05.758486
+IO_time:  0:00:40.862761
+total_time:  0:00:40.864959

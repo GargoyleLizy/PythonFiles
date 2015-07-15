@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "mpiTry.py", line 134, in <module>
+    data_chunk = comm.scatter(data_chunks,root=0)
+  File "Comm.pyx", line 874, in mpi4py.MPI.Comm.scatter (src/mpi4py.MPI.c:73400)
+  File "pickled.pxi", line 663, in mpi4py.MPI.PyMPI_scatter (src/mpi4py.MPI.c:34108)
+  File "pickled.pxi", line 95, in mpi4py.MPI._p_Pickle.alloc (src/mpi4py.MPI.c:27832)
+SystemError: Negative size passed to PyBytes_FromStringAndSize

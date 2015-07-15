@@ -1,0 +1,32 @@
+start_time:  2015-04-11 23:14:16.065028
+IO_end_time:  2015-04-11 23:14:48.278120
+proc 1 start processing at 2015-04-11 23:14:58.583173
+proc 3 start processing at 2015-04-11 23:14:58.906200
+proc 4 start processing at 2015-04-11 23:14:59.242387
+proc 2 start processing at 2015-04-11 23:14:59.378369
+proc 5 start processing at 2015-04-11 23:14:59.606179
+proc 6 start processing at 2015-04-11 23:14:59.937544
+proc 0 start processing at 2015-04-11 23:15:00.261727
+proc 7 start processing at 2015-04-11 23:15:00.266630
+proc 0 end processing at 2015-04-11 23:29:51.918397
+total processing time for proc 0 is 0:14:51.656670
+proc 7 end processing at 2015-04-11 23:30:01.278183
+total processing time for proc 7 is 0:15:01.011553
+proc 3 end processing at 2015-04-11 23:30:13.169069
+total processing time for proc 3 is 0:15:14.262869
+proc 6 end processing at 2015-04-11 23:30:22.850127
+total processing time for proc 6 is 0:15:22.912583
+proc 2 end processing at 2015-04-11 23:30:24.125083
+total processing time for proc 2 is 0:15:24.746714
+proc 4 end processing at 2015-04-11 23:30:25.052039
+total processing time for proc 4 is 0:15:25.809652
+proc 5 end processing at 2015-04-11 23:30:38.857650
+total processing time for proc 5 is 0:15:39.251471
+proc 1 end processing at 2015-04-11 23:31:50.279372
+total processing time for proc 1 is 0:16:51.696199
+The word " ash " appeared  6291 time(s) in the file
+Top 10 users:  [('luke5sos', 3935), ('itunesfestival', 3261), ('bbcr1', 2590), ('michael5sos', 2491), ('ashton5sos', 2199), ('calum5sos', 1937), ('johnfeldy', 1821), ('5sos', 1683), ('mtv', 1234), ('gma', 1232)]
+Top 10 topics:  [('vote5sos', 8614), ('5sosgoodgirls', 4882), ('auspol', 3450), ('5sosninjas', 2044), ('amnesiamusicvideo', 2043), ('sydney', 1270), ('5sosderpcon', 1225), ('photography', 1219), ('vmas', 1122), ('mtvhottest', 891)]
+end_time:  2015-04-11 23:31:51.247550
+IO_time:  0:00:32.213092
+total_time:  0:17:35.182522

@@ -1,0 +1,45 @@
+1. Introduction about the application
+The application for assignment 1 is wrote by Python.
+It imports library "re" to process the file content, library "datetime" to record the total time of completing a job and "mpi4py" for multi-processors' communication.
+
+1.1 structure of the application
+1.1.1 1 node 1 core
+For the case of 1 node 1 core, I wrote a simple file which just read the file line by line and at the same time processing each line.
+And return the final result at last.
+ configuration of PBS
+In the PBS script, nodes=1:ppn=1 is used to require one node and one core.
+
+1.1.2 1 node 8 cores
+For the case of 1 node 8 cores, "mpi4py" is imported to support the multi-processors sturcture. There are 8 processors and the processor with rank 0 would be responsible to read the whole file into memory and then divide the list of lines of file into evenly chunks.
+Then with the comm.scatter(), each node would get its chunk to process and the result is gathered by comm.gather().
+At last the processor with rank 0 would process the results gathered from other processors and compute the final result.
+	configuration of PBS
+In the PBS script, nodes=1:ppn=8 is used to require one node and eight cores.
+And the command used to start the application is "mpirun -np 8 python3 mpiTry.py $1" $1 indicates the first command variable that might be used by users to specify the query term which would be counted over the Twitter.csv.
+
+1.1.3 2 nodes 8 cores
+In this case, the python code for this case is same for 1node8cores. They use the same sturcture and the only differences between them is the PBS configuration:
+nodes=2:ppn=4 is used to require two nodes and four cores of each to run the python file.
+
+2.1 About the parallel structure.
+In the python code file "mpiTry.py". Functions scatter() and gather() are used to achive the parallelism. 
+At first, the large text data need to be divided into evenly chunks. To divide the data, rank 0 firstly read the whole data as a list. Each element of the list is a line from the Twitter.csv. Then rank 0 split the list evenly into serval lists according to the 'size' of MPI.
+After dividing data, function scatter() from MPI is called to distribute the lists of data to each processor.
+Then each processor start processing its own data chunk and get a result as a list of (int,Counter(),Counter()). The 'int' in the list indicates the count of query term in that chunk and the two Counters would contain the count of @users and #topics gathered from that chunk.
+When every processor finished its job, the function gather() is called to gather the result list from each processor.
+At last, the processor with rank 0 would add the list of result together to get the final result and save it for the users.
+
+2.2 time recording
+except the total time for completing each case.For case 1node8cores and 2node8cores, the IO time (for reading the file into memory) and the process time of each processor are also recored to compare their preformance.   
+
+3.1 Performance analysis for small file
+In order to test the code, a 10kTwitter.csv file is generated which contains the 10000 lines from Twitter.csv.
+And the python code is subbmited to Edward with the wall time set to 5 minutes.
+The total time for each case is :
+n1c1: total_time:  0:00:40.864959
+n1c8: total_time:  0:00:03.888590
+n2c8: total_time:  0:00:03.106365
+
+4.1 Pontential improvement
+For the structure used in this assginment, the whole large file is firstly read into the memeory and then split into chunks and distributed to each processors. According to the time record in the result. The IO part of reading the whole file would take around 30 seconds and The scatter()/gather() function that invovles mpi communincation would take around 10 seconds(from the end of the IO part to the start of first processor processing its chunk).
+
